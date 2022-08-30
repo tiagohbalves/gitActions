@@ -28,7 +28,16 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": {
+					"raw": "facebook.com/robots.txt",
+					"host": [
+						"facebook",
+						"com"
+					],
+					"path": [
+						"robots.txt"
+					]
+				}
 			},
 			"response": []
 		}
