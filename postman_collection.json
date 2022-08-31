@@ -42,15 +42,6 @@
 			"response": []
 		},
 		{
-			"name": "home",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		},
-		{
 			"name": "test",
 			"request": {
 				"method": "GET",
