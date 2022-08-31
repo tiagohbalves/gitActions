@@ -40,6 +40,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teste",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teste"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
