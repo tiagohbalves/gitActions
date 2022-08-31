@@ -28,10 +28,10 @@ jobs:
         run: npm install -g newman
       - run: npm install
       - name: Run the API and Postman's tests
-      run: | 
-        npm start & 
-        sleep 60
-        newman run "postman_collection.json"
+        run: | 
+          npm start & 
+          sleep 60
+          newman run "postman_collection.json"
       - uses: matt-ball/newman-action@master
         with:
           collection: postman_collection.json
