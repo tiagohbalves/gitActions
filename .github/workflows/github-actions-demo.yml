@@ -24,9 +24,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install newman
+        run: npm install -g newman
       - run: npm install
-      - run: npm start
-
+      - name: Run the API and Postman's tests
+      run: | 
+        npm start & 
+        sleep 60
+        newman run "postman_collection.json"
       - uses: matt-ball/newman-action@master
         with:
           collection: postman_collection.json
