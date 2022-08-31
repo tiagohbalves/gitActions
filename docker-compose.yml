@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./
+      target: dev
+    volumes:
+      - .:/src
+    command: npm run start:dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+  postman:
+    container_name: postmanTests
+    build:
+      context: ./fastRest.QA.Tests/postman
+      dockerfile: Dockerfile
+    image: fastRest_postman_tests
+    command: run FastRestAPITests.postman_collection.json -k -r htmlextra,cli,json --reporter-htmlextra-export="reports/fastRestAPITests.html" --reporter-json-export="reports/fastRestAPITests.json"
+    volumes:
+      - ./fastRest.QA.Tests/postman:/etc/newman
+    depends_on:
+      - "api"
+      - "db"
+    networks:
+      - app_network
